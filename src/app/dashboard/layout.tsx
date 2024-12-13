@@ -14,7 +14,7 @@ export default function DashboardLayout({
     <div className="bg-slate-100 overflow-y-scroll w-screen h-screen antialiased text-slate-300 selection:bg-gray-600 selection:text-white">
       <div className="flex">
        <Sidebar/>
-        <div className="p-2 w-full text-slate-800">
+        <div className="w-full text-slate-800">
         {children}
         </div>
       </div>

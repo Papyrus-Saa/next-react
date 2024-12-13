@@ -8,19 +8,19 @@ const menuItem = [
     path: "/dashboard/main",
     icon: <IoBrowsersOutline size={20} />,
     title: "Dashboard",
-    subTitle: "Visualización",
+    subTitle: "Screen display",
   },
   {
     path: "/dashboard/counter",
     icon: <IoCalculator size={20} />,
     title: "Counter",
-    subTitle: "Contador Cliente",
+    subTitle: "Client counter",
   },
   {
     path: "/dashboard/pokemons",
     icon: <SiComicfury size={20} />,
     title: "Pokemons",
-    subTitle: "Estáticos",
+    subTitle: "Static",
   },
 ];
 

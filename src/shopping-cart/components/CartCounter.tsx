@@ -11,7 +11,7 @@ const CartCounter = ({ value = 0 }: Props) => {
   const [counter, setCounter] = useState(value);
   return (
     <>
-      <span className="text-9xl"> {counter} </span>
+      <span className="text-9xl text-gray-300"> {counter} </span>
       <div>
         <button
           onClick={() => setCounter(counter + 1)}
