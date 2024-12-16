@@ -5,6 +5,13 @@ import { PokemonsResponse } from "@/pokemons/interfaces/pokemons-response";
 import { SimplePokemon } from "@/pokemons/interfaces/simple-pokemon";
 
 
+
+export const metadata = {
+ title: '151 Pokémons',
+ description: 'Pokemons',
+};
+
+
 const getPokemons = async (
   limit = 20,
   offset = 0

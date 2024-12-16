@@ -10,6 +10,7 @@ interface Props {
 }
 
 const PokemonCard = ({ pokemon }: Props) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { id, name } = pokemon;
 
   return (
@@ -32,7 +33,7 @@ const PokemonCard = ({ pokemon }: Props) => {
 
           <div className="mt-5">
             <Link
-              href={`/dashboard/pokemon/${id}`}
+              href={`/dashboard/pokemons/${name}`}
               className="rounded-full bg-green-900 hover:bg-gray-100 hover:text-green-900 duration-500 py-2 px-4 text-xs font-semibold text-gray-100 "
             >
               More...

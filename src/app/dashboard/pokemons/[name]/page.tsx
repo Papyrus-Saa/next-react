@@ -1,29 +1,39 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Pokemon } from "@/pokemons/interfaces/pokemon";
+import { PokemonsResponse } from "@/pokemons/interfaces/pokemons-response";
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
 interface Props {
-  params: Promise<{ id: string }>;
+  params: Promise<{ name: string }>; // Ajustamos para que sea un Promise
 }
 
 // Función para generar parámetros estáticos
 export async function generateStaticParams() {
 
+  const data: PokemonsResponse = await fetch(
+      `https://pokeapi.co/api/v2/pokemon?limit=151`
+    ).then((res) => res.json());
 
-  const staticPokemons = Array.from( { length: 151 }).map(( value, index) => `${index + 1}`);
-  return staticPokemons.map( id => ({
-id: id
+    const staticPokemons = data.results.map((pokemon) => ({
+      id: pokemon.url.split("/").at(-2)!,
+      name: pokemon.name,
+    }));
+
+
+  return staticPokemons.map(  ( {  name  } ) => ({
+name: name
 }))
 }
 
 // Función para generar metadatos dinámicos
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
 
+  const { name } = await params;
   try {
-    const { id: pokemonId, name } = await getPokemon(id);
+    const { id: pokemonId, name: pokemonName } = await getPokemon(name);
+
 
     return {
       title: `#${pokemonId} - ${name}`,
@@ -73,9 +83,9 @@ const getPokemon = async (id: string): Promise<Pokemon> => {
 
 
 export default async function PokemonPage({ params }: Props) {
-  const { id } = await params;
+  const { name } = await params;
 
-  const pokemon = await getPokemon(id);
+  const pokemon = await getPokemon(name);
 
   return (
     <div className="flex flex-col items-center justify-center bg-neutral-950 h-full p-4">
