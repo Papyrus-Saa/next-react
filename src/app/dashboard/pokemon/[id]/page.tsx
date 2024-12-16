@@ -103,8 +103,8 @@ export default async function PokemonPage({ params }: Props) {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4 px-2 w-full">
-          <div className="flex flex-col items-start justify-center rounded-2xl bg-green-900 bg-clip-border px-3 py-4 drop-shadow-lg">
-            <p className="text-sm text-gray-200">Types</p>
+          <div className="flex flex-col items-start justify-center rounded-2xl bg-green-100 bg-clip-border px-3 py-4 drop-shadow-lg">
+            <p className="text-sm text-gray-200">Type</p>
             <div className="text-base font-medium text-gray-400 flex">
               {pokemon.types.map((type) => (
                 <p key={type.slot} className="mr-2 capitalize">

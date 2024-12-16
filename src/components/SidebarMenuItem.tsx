@@ -24,16 +24,16 @@ const SidebarMenuItem = ( {path, icon, title, subTitle }: Props) => {
   return (
     <Link
       href={path}
-      className={`w-full px-2  inline-flex space-x-2 items-center justify-around border-l border-slate-700 py-3 hover:bg-white/5 transition ease-linear duration-150 ${isActive ? 'bg-green-800' : ''}`}
+      className={`w-full px-2  inline-flex space-x-2 items-center justify-around border-l border-slate-700 py-3 hover:bg-gray-400/5 transition ease-linear duration-150 ${isActive ? 'bg-gray-200' : ''}`}
   >
       <div>
        <div>{  icon  }</div>
       </div>
       <div className="flex flex-col">
-        <span className="text-lg font-bold  leading-5 text-white">
+        <span className="text-lg font-bold  leading-5 text-slate-700">
           {  title  }
         </span>
-        <span className="text-sm text-white/50 hidden md:block">
+        <span className="text-sm text-gray-700 hidden md:block">
           {  subTitle  }
         </span>
       </div>

@@ -32,8 +32,8 @@ const getPokemons = async (
 export default async function PokemonsPage() {
   const pokemons = await getPokemons(151);
   return (
-    <div className="flex flex-col bg-gray-950 p-2">
-     <PokemonGrid pokemons={pokemons}/>
-    </div>
+   <div className="w-full h-full flex justify-center items-center bg-gray-100"> <div className="max-w-[900px] mx-auto overflow-auto max-h-[600px] flex flex-col  bg-gray-200 p-2">
+   <PokemonGrid pokemons={pokemons}/>
+  </div></div>
   );
 }
